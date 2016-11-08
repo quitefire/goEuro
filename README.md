@@ -1,3 +1,7 @@
+goEuro is a simple console app returning a list of suggestion based on a city name you provide.
+All the suggestion is then listed into "city name".csv file.
+
+
 1. In order to run the application do the following :
     - **mvn clean package**;
     - **java -jar target/goeuro.jar "city_name"**;
