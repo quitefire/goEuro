@@ -9,5 +9,7 @@ All the suggestion is then listed into "city name".csv file.
 2. Alternative way to run the project from Intellij Idea is :
     - **mvn spring-boot:run -Drun.arguments="city name"**
 
-**Required**:
-- idea lombok plugin
+**Dependencies**:
+- idea lombok plugin;
+- java version 1.8;
+- spring boot plugin;
