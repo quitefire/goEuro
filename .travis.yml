@@ -7,15 +7,15 @@ after_succes:
 before_deploy:
   - mvn -DskipTests package
   - export JAR_FILE=$(ls ./target/goeuro.jar)
-deploy:
-  provider: releases
-  api_key:
-    secure:82c1cb8ce5135410607ca0c364a8a912fa133e14
-  file: $JAR_FILE
-  skip_cleanup: true
-  on:
-    repo: quitefire/goEuro
-    tags: false
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure:82c1cb8ce5135410607ca0c364a8a912fa133e14
+#  file: $JAR_FILE
+#  skip_cleanup: true
+#  on:
+#    repo: quitefire/goEuro
+#    tags: true
 addons:
     apt:
     packages:
