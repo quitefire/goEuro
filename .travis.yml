@@ -10,7 +10,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure:661d69a6820f3ac3ee15045b1339e7e7e91eb9c9
+    secure:82c1cb8ce5135410607ca0c364a8a912fa133e14
   file: $JAR_FILE
   skip_cleanup: true
   on:
