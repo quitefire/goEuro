@@ -6,11 +6,11 @@ after_succes:
   - bash <(curl -s https://codecov.io/bash)
 before_deploy:
   - mvn -DskipTests package
-  - export JAR_FILE=$(ls ./target/go-euro-*-jar-with-dependencies.jar)
+  - export JAR_FILE=$(ls ./target/goeuro.jar)
 deploy:
   provider: releases
   api_key:
-    secure:2gCsi2ETYczR0Rtw7jX7JPKnb62k/aOkcWIlTwywlNvC2fD1Ey7iay7fpKA0DGgDM0cP9Tq7vyBoeclTFaUmnyejOQL1HKAu8L2RxFNfGKWoTIu1aUZWv5pbjLuVsL/zpA9vOD9RwtK22zBlBzjwTicywmKYuwkPNH6idHhu2TQn3u1KqZNCeo9iJ3FdiU8suvlZMJV8125X8nqvlUC5n78/+xECXQGtbL0iB9ULjmT/OfMvBdLSqWNAqJuCmUbo=
+    secure:661d69a6820f3ac3ee15045b1339e7e7e91eb9c9
   file: $JAR_FILE
   skip_cleanup: true
   on:
@@ -20,3 +20,5 @@ addons:
     apt:
     packages:
     - oracle-java8-installer
+notifications:
+    email: false
