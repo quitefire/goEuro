@@ -16,3 +16,8 @@ deploy:
   on:
     repo: quitefire/goEuro
     tags: true
+
+addons:
+    apt:
+    packages:
+    - oracle-java8-installer
