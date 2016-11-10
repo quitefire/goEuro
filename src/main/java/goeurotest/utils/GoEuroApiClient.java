@@ -15,6 +15,7 @@ import java.util.List;
 
 @Component
 public class GoEuroApiClient {
+    public static final String URL_PATH_PARAM = "city";
 
    /* @Value("${application.suggestionUrlTemplate}")
     private String suggestionUrl;*/
@@ -26,7 +27,7 @@ public class GoEuroApiClient {
 
     public List<Suggestion> findSuggestionsByCity(@NonNull String city) {
         ResponseEntity<Suggestion[]> response =
-                restTemplate.getForEntity(appProperties.getSuggestionUrlTemplate(), Suggestion[].class, ImmutableMap.of("city", city));
+                restTemplate.getForEntity(appProperties.getSuggestionUrlTemplate(), Suggestion[].class, ImmutableMap.of(URL_PATH_PARAM, city));
 
         if (response.getStatusCode() != HttpStatus.OK) {
             throw new RuntimeException(String.format("Response status code was %s", response.getStatusCode()));

@@ -1,7 +1,5 @@
 package goeurotest;
 
-import goeurotest.utils.AppCommandLineRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
