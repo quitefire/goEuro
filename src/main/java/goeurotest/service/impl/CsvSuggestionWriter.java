@@ -14,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class CsvSuggestionWriter implements SuggestionWriter {
 
     @Override
     public void write(@NonNull String filename, @NonNull List<CsvSuggestionDto> data) {
+
         try {
             @Cleanup Writer writer = new PrintWriter(new FileWriter(filename), true);
             doWrite(writer, data);
