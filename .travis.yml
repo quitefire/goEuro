@@ -15,7 +15,7 @@ deploy:
   skip_cleanup: true
   on:
     repo: quitefire/goEuro
-    tags: true
+    tags: false
 addons:
     apt:
     packages:
