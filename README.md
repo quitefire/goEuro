@@ -1,3 +1,5 @@
+# GoEuro CLI [![Build Status](https://api.travis-ci.org/quitefire/goEuro.svg?branch=master)](https://travis-ci.org/quitefire/goEuro)
+
 The purpose of this project is to build a CLI to call the go-euro search API. Given a city name (eg: "London") this software calls the go-euro API to get position suggestions. 
 The results are stored in a CSV file. The name of the file is set to the "city" + .csv .
 
