@@ -1,0 +1,13 @@
+application:
+    suggestionUrlTemplate: http://api.goeuro.com/api/v2/position/suggest/en/{city}
+    sortingorder:
+        -_id
+      -name
+      -type
+      -latitude
+      -longitude
+logging:
+    file: application.log
+    level:
+        root: ERROR
+

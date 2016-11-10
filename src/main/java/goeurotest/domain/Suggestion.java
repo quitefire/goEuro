@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Suggestion {

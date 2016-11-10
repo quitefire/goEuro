@@ -2,7 +2,7 @@ package goeurotest.utils;
 
 import com.google.common.collect.ImmutableList;
 import goeurotest.exception.ExitException;
-import goeurotest.service.CsvSuggestionWriter;
+import goeurotest.service.SuggestionWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.toList;
 public class AppCommandLineRunner implements CommandLineRunner {
 
     @Autowired
-    private CsvSuggestionWriter csvSuggestionWriter;
+    private SuggestionWriter csvSuggestionWriter;
     @Autowired
     private GoEuroApiClient goEuroApiClient;
     @Autowired
