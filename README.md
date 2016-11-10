@@ -16,7 +16,7 @@ $ mvn clean package
 
 ### How to run
 
-Build the project.
+Build the project and do the following: 
 
 ```bash
 $ java -jar target/goeuro.jar "city name"
