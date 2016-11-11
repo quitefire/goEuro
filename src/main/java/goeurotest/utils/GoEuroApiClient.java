@@ -15,7 +15,7 @@ import java.util.List;
 
 @Component
 public class GoEuroApiClient {
-    public static final String URL_PATH_PARAM = "city";
+    private static final String URL_PATH_PARAM = "city";
 
    /* @Value("${application.suggestionUrlTemplate}")
     private String suggestionUrl;*/
