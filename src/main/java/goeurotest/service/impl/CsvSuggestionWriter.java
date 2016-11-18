@@ -4,6 +4,7 @@ package goeurotest.service.impl;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import goeurotest.dto.CsvSuggestionDto;
+import goeurotest.exception.ExitException;
 import goeurotest.service.SuggestionWriter;
 import lombok.Cleanup;
 import lombok.NonNull;
@@ -14,8 +15,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class CsvSuggestionWriter implements SuggestionWriter {
             doWrite(writer, data);
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new ExitException(e);
         }
     }
 

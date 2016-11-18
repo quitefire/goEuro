@@ -1,6 +1,7 @@
 package goeurotest.utils;
 
 import com.google.common.collect.ImmutableList;
+import goeurotest.dto.CsvSuggestionDto;
 import goeurotest.exception.ExitException;
 import goeurotest.service.SuggestionWriter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,13 +34,11 @@ public class AppCommandLineRunner implements CommandLineRunner {
 
         try {
             final String cityName = args[0].trim();
-            final String filename = cityName + ".csv";
+            final String filename = cityName.endsWith(".csv") ? cityName : cityName + ".csv";
 
             csvSuggestionWriter.write(
                     filename,
-                    goEuroApiClient.findSuggestionsByCity(cityName).stream()
-                            .map(csvSuggestionConverter::toCsvSuggestionDto)
-                            .collect(collectingAndThen(toList(), ImmutableList::copyOf)));
+                    findSuggestions(cityName));
 
             System.out.println(String.format("Suggestions have been successfully saved to %s", filename));
 
@@ -47,6 +46,12 @@ public class AppCommandLineRunner implements CommandLineRunner {
             System.err.println("An error's occurred while processing your request. Check the log file for more details");
             throw new ExitException(e);
         }
+    }
+
+    private ImmutableList<CsvSuggestionDto> findSuggestions(String cityName) {
+        return goEuroApiClient.findSuggestionsByCity(cityName).stream()
+                .map(csvSuggestionConverter::toCsvSuggestionDto)
+                .collect(collectingAndThen(toList(), ImmutableList::copyOf));
     }
 
     private void showHelpScreen() {
